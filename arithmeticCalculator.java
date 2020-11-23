@@ -28,6 +28,8 @@ public class arithmeticCalculator {
 			success2 = false;
 			Scanner s = new Scanner(System.in);
 			System.out.println("Welcome to arithmeticCalculator");
+			System.out.println("format of the operation will be");
+			System.out.println("'1st num'  'operation'  '2nd num'");
 			System.out.println("Enter 1st number");
 			
 			float num1 = 0, num2 = 0, res = 0;
