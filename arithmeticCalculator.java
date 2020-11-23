@@ -1,4 +1,9 @@
 package blocks;
+
+/*
+* Written by John Lee 11/22/2020
+* 
+*/
 import java.util.*;
 public class arithmeticCalculator {
 	public static int addition(int a, int b) {
