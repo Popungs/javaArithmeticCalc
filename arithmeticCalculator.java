@@ -1,69 +1,24 @@
 package blocks;
-
-/*
-* Written by John Lee 11/22/2020
-* 
-*/
 import java.util.*;
 public class arithmeticCalculator {
-	public static int addition(int a, int b) {
-		int retVal = 0;
-		boolean success = false;
-		while (success == false) {
-			try {
-				retVal = a + b;
-				success = true;
-			} catch(Exception ex) {
-				System.out.println("error: " + ex.getMessage());
-				System.out.println("returning 0");
-				return 0;
-			}
-		}
+	public static float addition(float a, float b) {
+		float retVal;
+		retVal = a + b;
 		return retVal;
 	}
-	public static int subtraction(int a, int b) {
-		int retVal = 0;
-		boolean success = false;
-		while (success == false) {
-			try {
-				retVal = a - b;
-				success = true;
-			} catch(Exception ex) {
-				System.out.println("error: " + ex.getMessage());
-				System.out.println("returning 0");
-				return 0;
-			}
-		}
+	public static float subtraction(float a, float b) {
+		float retVal = 0;
+		retVal = a - b;
 		return retVal;
 	}
-	public static int division(int a, int b) {
-		int retVal = 0;
-		boolean success = false;
-		while (success == false) {
-			try {
-				retVal = a / b;
-				success = true;
-			} catch(Exception ex) {
-				System.out.println("error: " + ex.getMessage());
-				System.out.println("returning 0");
-				return 0;
-			}
-		}
+	public static float division(float a, float b) {
+		float retVal;
+		retVal = a / b;
 		return retVal;
 	}
-	public static int multiplication(int a, int b) {
-		int retVal = 0;
-		boolean success = false;
-		while (success == false) {
-			try {
-				retVal = a * b;
-				success = true;
-			} catch(Exception ex) {
-				System.out.println("error: " + ex.getMessage());
-				System.out.println("returning 0");
-				return 0;
-			}
-		}
+	public static float multiplication(float a, float b) {
+		float retVal;		
+		retVal = a * b;
 		return retVal;
 	}
 	public static void main(String[] args) {
@@ -73,46 +28,53 @@ public class arithmeticCalculator {
 			success2 = false;
 			Scanner s = new Scanner(System.in);
 			System.out.println("Welcome to arithmeticCalculator");
-			System.out.println("Enter 1st integer");
+			System.out.println("Enter 1st number");
 			
-			int num1 = 0, num2 = 0, res = 0;
+			float num1 = 0, num2 = 0, res = 0;
 			while (success1 == false) {
 				
 				try { 
-					num1 = s.nextInt();
+					num1 = s.nextFloat();
 					success1 = true;
 				} catch(Exception ex) {
-					System.out.println("Please enter valid integer");
+					System.out.println("Please enter valid number");
 					System.out.println("error: " + ex.getMessage());
+					System.out.println("waiting for input again");
+					
 				}
 				s.nextLine();
 			}
 			
-			System.out.println("Enter 2nd integer");
+			System.out.println("Enter 2nd number");
 			while (success2 == false) {
 				try { 
-					num2 = s.nextInt();
+					num2 = s.nextFloat();
 					success2 = true;
 				} catch(Exception ex) {
-					System.out.println("Please enter valid integer");
+					System.out.println("Please enter valid number");
 					System.out.println("error: " + ex.getMessage());
+					System.out.println("waiting for input again");
 				}
 				s.nextLine();
 			}
+		
 			
 			System.out.println("please specify operation to perform");
-			System.out.println("Enter 'addition' or 'subtraction' or 'division' or 'multiplication");
+			System.out.println("Enter '1 for addition' or '2 for subtraction' or '3 for division' or '4 for multiplication'");
+			System.out.println("To stop the program enter '5 for exit'");
 			
-			String op = s.nextLine();
+			char op = s.nextLine().charAt(0);
 			
 			switch (op) {
-				case "addition": res = addition(num1,num2);
+				case '1': res = addition(num1,num2);
 					break;
-				case "subtraction" : res = subtraction(num1,num2);
+				case '2' : res = subtraction(num1,num2);
 					break;
-				case "division" : res = division(num1, num2);
+				case '3' : res = division(num1, num2);
 					break;
-				case "multiplication": res = multiplication(num1,num2);
+				case '4': res = multiplication(num1,num2);
+					break;
+				case '5': System.out.println("exiting program"); System.exit(0);
 					break;
 				default: System.out.println("invalid input");
 					break;
